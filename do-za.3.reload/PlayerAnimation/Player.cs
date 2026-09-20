@@ -3,8 +3,8 @@ using System;
 
 public partial class Player : CharacterBody2D
 {
-    [Export] private AnimatedSprite2D animatedSprite;
-    public float Speed = 300.0f;
+	[Export] private AnimatedSprite2D animatedSprite;
+	public float Speed = 300.0f;
 	public const float JumpVelocity = -400.0f;
 
 	public override void _PhysicsProcess(double delta)
@@ -32,14 +32,14 @@ public partial class Player : CharacterBody2D
 			{
 				animatedSprite.Play("PlayerRun");
 				Speed = 500.0f;
-            }
+			}
 			else
 			{
 				animatedSprite.Play("PlayerWalk");
 				Speed = 300.0f;
 			}
 			CheckSide(velocity, direction);
-            velocity.X = direction.X * Speed;
+			velocity.X = direction.X * Speed;
 		}
 		else
 		{

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bo7p7cjefoqmr"
-path="res://.godot/imported/row03_col04.png-1776e666cf6757a9ec13ea2ec832305f.ctex"
+uid="uid://crisfq6f208l8"
+path="res://.godot/imported/row00_col00.png-037ff3a6e070fac3ed8d6dc27b066b7d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://row03_col04.png"
-dest_files=["res://.godot/imported/row03_col04.png-1776e666cf6757a9ec13ea2ec832305f.ctex"]
+source_file="res://PlayerAnimation/PlayerStay/row00_col00.png"
+dest_files=["res://.godot/imported/row00_col00.png-037ff3a6e070fac3ed8d6dc27b066b7d.ctex"]
 
 [params]
 
