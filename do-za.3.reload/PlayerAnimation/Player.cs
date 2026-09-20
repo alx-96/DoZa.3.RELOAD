@@ -4,7 +4,7 @@ using System;
 public partial class Player : CharacterBody2D
 {
 	[Export] private AnimatedSprite2D animatedSprite;
-	public float Speed = 300.0f;
+	public float Speed = 100.0f;
 	public const float JumpVelocity = -400.0f;
 
 	public override void _PhysicsProcess(double delta)
@@ -20,31 +20,38 @@ public partial class Player : CharacterBody2D
 		// Handle Jump.
 		if (Input.IsActionJustPressed("ui_accept") && IsOnFloor())
 		{
-			velocity.Y = JumpVelocity;
+            velocity.Y = JumpVelocity;
 		}
 
-		// Get the input direction and handle the movement/deceleration.
-		// As good practice, you should replace UI actions with custom gameplay actions.
-		Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
-		if (direction != Vector2.Zero)
+		if (!IsOnFloor())
 		{
-			if (Input.IsKeyPressed(Key.Shift))
-			{
-				animatedSprite.Play("PlayerRun");
-				Speed = 500.0f;
-			}
-			else
-			{
-				animatedSprite.Play("PlayerWalk");
-				Speed = 300.0f;
-			}
-			CheckSide(velocity, direction);
-			velocity.X = direction.X * Speed;
+			animatedSprite.Play("PlayerJump");
 		}
 		else
 		{
-			velocity.X = Mathf.MoveToward(Velocity.X, 0, Speed);
+			Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
+			if (direction != Vector2.Zero)
+			{
+				if (Input.IsKeyPressed(Key.Shift))
+				{
+					animatedSprite.Play("PlayerRun");
+					Speed = 300.0f;
+				}
+				else
+				{
+					animatedSprite.Play("PlayerWalk");
+					Speed = 100.0f;
+				}
+				CheckSide(velocity, direction);
+				velocity.X = direction.X * Speed;
+			}
+			else
+			{
+				animatedSprite.Play("PlayerStay");
+				velocity.X = Mathf.MoveToward(Velocity.X, 0, Speed);
+			}
 		}
+
 
 		Velocity = velocity;
 		MoveAndSlide();
