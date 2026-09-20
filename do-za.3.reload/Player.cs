@@ -3,7 +3,8 @@ using System;
 
 public partial class Player : CharacterBody2D
 {
-	public float Speed = 300.0f;
+    [Export] private AnimatedSprite2D animatedSprite;
+    public float Speed = 300.0f;
 	public const float JumpVelocity = -400.0f;
 
 	public override void _PhysicsProcess(double delta)
@@ -27,8 +28,18 @@ public partial class Player : CharacterBody2D
 		Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
 		if (direction != Vector2.Zero)
 		{
-			Speed = Input.IsKeyPressed(Key.Shift) ? 500.0f : 300.0f;
-			velocity.X = direction.X * Speed;
+			if (Input.IsKeyPressed(Key.Shift))
+			{
+				animatedSprite.Play("PlayerRun");
+				Speed = 500.0f;
+            }
+			else
+			{
+				animatedSprite.Play("PlayerWalk");
+				Speed = 300.0f;
+			}
+			CheckSide(velocity, direction);
+            velocity.X = direction.X * Speed;
 		}
 		else
 		{
@@ -37,5 +48,18 @@ public partial class Player : CharacterBody2D
 
 		Velocity = velocity;
 		MoveAndSlide();
+	}
+
+
+	private void CheckSide(Vector2 velocityCS, Vector2 directionCS)
+	{
+		if(directionCS.X > 0)
+		{
+			animatedSprite.FlipH = false;
+		}
+		else if(directionCS.X < 0)
+		{
+			animatedSprite.FlipH = true;
+		}
 	}
 }

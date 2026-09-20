@@ -22,24 +22,6 @@ size = Vector2(11, 25)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_nr8wp")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_d2bti")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_ta5nu")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_flf07")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_k73cj")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_rjqkl")
-}, {
-"duration": 1.0,
 "texture": ExtResource("8_fs4d3")
 }, {
 "duration": 1.0,
@@ -61,7 +43,7 @@ animations = [{
 "texture": ExtResource("14_gt76g")
 }],
 "loop": 1,
-"name": &"new_animation",
+"name": &"PlayerRun",
 "speed": 5.0
 }, {
 "frames": [{
@@ -87,33 +69,7 @@ animations = [{
 "texture": ExtResource("8_fs4d3")
 }],
 "loop": 1,
-"name": &"new_animation_1",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("8_fs4d3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_7vxoj")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_ei405")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_e8dv2")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_2nhjh")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_bjha6")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_gt76g")
-}],
-"loop": 1,
-"name": &"new_animation_2",
+"name": &"PlayerWalk",
 "speed": 5.0
 }]
 
@@ -123,14 +79,9 @@ size = Vector2(1089, 40)
 [node name="Node2D" type="Node2D" unique_id=1642824135]
 position = Vector2(-3, 0)
 
-[node name="Player" type="CharacterBody2D" parent="." unique_id=864696326]
+[node name="Player" type="CharacterBody2D" parent="." unique_id=864696326 node_paths=PackedStringArray("animatedSprite")]
 script = ExtResource("1_wtcfe")
-
-[node name="ColorRect" type="ColorRect" parent="Player" unique_id=559587343]
-offset_left = 714.0
-offset_top = 521.0
-offset_right = 732.0
-offset_bottom = 583.0
+animatedSprite = NodePath("AnimatedSprite2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1557484554]
 position = Vector2(524.5, 486.5)
@@ -139,8 +90,7 @@ shape = SubResource("RectangleShape2D_kav7g")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player" unique_id=1478774501]
 position = Vector2(525, 483)
 sprite_frames = SubResource("SpriteFrames_kav7g")
-animation = &"new_animation_2"
-frame_progress = 0.89735585
+animation = &"PlayerWalk"
 
 [node name="Ground" type="StaticBody2D" parent="." unique_id=160117464]
 
