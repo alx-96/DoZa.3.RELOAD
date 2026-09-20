@@ -76,7 +76,10 @@ animations = [{
 "name": &"PlayerDeath",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_e8dv2")
+}],
 "loop": 1,
 "name": &"PlayerFalling",
 "speed": 5.0
@@ -87,9 +90,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("3_ei405")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_e8dv2")
 }],
 "loop": 1,
 "name": &"PlayerJump",
@@ -201,7 +201,7 @@ position = Vector2(525, 483)
 sprite_frames = SubResource("SpriteFrames_kav7g")
 animation = &"PlayerJump"
 frame = 1
-frame_progress = 0.3392179
+frame_progress = 0.80105555
 
 [node name="Ground" type="StaticBody2D" parent="." unique_id=160117464]
 

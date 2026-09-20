@@ -10,55 +10,67 @@ public partial class Player : CharacterBody2D
 	public override void _PhysicsProcess(double delta)
 	{
 		Vector2 velocity = Velocity;
+		Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
 
-		// Add the gravity.
-		if (!IsOnFloor())
+		if(Input.IsKeyPressed(Key.Shift))
+        {
+            Speed = 300.0f;
+        }
+        else
+        {
+            Speed = 100.0f;
+        }
+
+		// -------------------------------------------------------------------------
+		if(direction.X != 0)
+		{
+            velocity.X = direction.X * Speed;
+        }
+        else
+		{
+			velocity.X = 0;
+		}
+        //-------------------------------------------------------------------------
+		CheckSide(direction);
+        // In Falling
+        if (!IsOnFloor())
 		{
 			velocity += GetGravity() * (float)delta;
-		}
-
-		// Handle Jump.
-		if (Input.IsActionJustPressed("ui_accept") && IsOnFloor())
-		{
-            velocity.Y = JumpVelocity;
-		}
-
-		if (!IsOnFloor())
-		{
-			animatedSprite.Play("PlayerJump");
+			animatedSprite.Play("PlayerFalling");
 		}
 		else
 		{
-			Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
-			if (direction != Vector2.Zero)
+			if (Input.IsActionJustPressed("ui_accept"))
+			{
+				velocity.Y = JumpVelocity;
+				animatedSprite.Play("PlayerJump");
+			}
+
+			else if (direction != Vector2.Zero)
 			{
 				if (Input.IsKeyPressed(Key.Shift))
 				{
 					animatedSprite.Play("PlayerRun");
-					Speed = 300.0f;
 				}
 				else
 				{
 					animatedSprite.Play("PlayerWalk");
-					Speed = 100.0f;
 				}
-				CheckSide(velocity, direction);
-				velocity.X = direction.X * Speed;
 			}
 			else
 			{
+				//velocity.X = Mathf.MoveToward(Velocity.X, 0, Speed);
 				animatedSprite.Play("PlayerStay");
-				velocity.X = Mathf.MoveToward(Velocity.X, 0, Speed);
 			}
 		}
-
+		
 
 		Velocity = velocity;
 		MoveAndSlide();
 	}
 
 
-	private void CheckSide(Vector2 velocityCS, Vector2 directionCS)
+	private void CheckSide(Vector2 directionCS)
 	{
 		if(directionCS.X > 0)
 		{
@@ -68,5 +80,5 @@ public partial class Player : CharacterBody2D
 		{
 			animatedSprite.FlipH = true;
 		}
-	}
+    }
 }
