@@ -188,8 +188,9 @@ size = Vector2(1089, 40)
 [node name="Node2D" type="Node2D" unique_id=1642824135]
 position = Vector2(-3, 0)
 
-[node name="Player" type="CharacterBody2D" parent="." unique_id=864696326]
+[node name="Player" type="CharacterBody2D" parent="." unique_id=864696326 node_paths=PackedStringArray("animatedSprite")]
 script = ExtResource("1_wtcfe")
+animatedSprite = NodePath("AnimatedSprite2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1557484554]
 position = Vector2(524.5, 486.5)
@@ -198,7 +199,9 @@ shape = SubResource("RectangleShape2D_kav7g")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player" unique_id=1478774501]
 position = Vector2(525, 483)
 sprite_frames = SubResource("SpriteFrames_kav7g")
-animation = &"PlayerFalling"
+animation = &"PlayerJump"
+frame = 1
+frame_progress = 0.3392179
 
 [node name="Ground" type="StaticBody2D" parent="." unique_id=160117464]
 
