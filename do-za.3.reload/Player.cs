@@ -28,7 +28,7 @@ public partial class Player : CharacterBody2D
 		if (direction != Vector2.Zero)
 		{
 			Speed = Input.IsKeyPressed(Key.Shift) ? 500.0f : 300.0f;
-            velocity.X = direction.X * Speed;
+			velocity.X = direction.X * Speed;
 		}
 		else
 		{
