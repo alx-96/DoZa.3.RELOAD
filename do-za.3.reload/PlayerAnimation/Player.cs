@@ -7,12 +7,13 @@ public partial class Player : CharacterBody2D
 	public float Speed = 100.0f;
 	public const float JumpVelocity = -400.0f;
 
-	public override void _PhysicsProcess(double delta)
+    public override void _PhysicsProcess(double delta)
 	{
 		Vector2 velocity = Velocity;
 		Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
 
-		if(Input.IsKeyPressed(Key.Shift))
+
+        if (Input.IsKeyPressed(Key.Shift))
         {
             Speed = 300.0f;
         }
@@ -30,8 +31,10 @@ public partial class Player : CharacterBody2D
 		{
 			velocity.X = 0;
 		}
+
+
         //-------------------------------------------------------------------------
-		CheckSide(direction);
+        CheckSide(direction);
         // In Falling
         if (!IsOnFloor())
 		{
@@ -40,13 +43,13 @@ public partial class Player : CharacterBody2D
 		}
 		else
 		{
-			if (Input.IsActionJustPressed("ui_accept"))
+			if (Input.IsActionPressed("ui_accept"))
 			{
 				velocity.Y = JumpVelocity;
 				animatedSprite.Play("PlayerJump");
 			}
 
-			else if (direction != Vector2.Zero)
+			if (direction != Vector2.Zero)
 			{
 				if (Input.IsKeyPressed(Key.Shift))
 				{
@@ -57,7 +60,7 @@ public partial class Player : CharacterBody2D
 					animatedSprite.Play("PlayerWalk");
 				}
 			}
-			else
+            else
 			{
 				//velocity.X = Mathf.MoveToward(Velocity.X, 0, Speed);
 				animatedSprite.Play("PlayerStay");
