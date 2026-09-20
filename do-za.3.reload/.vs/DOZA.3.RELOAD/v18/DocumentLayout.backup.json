@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\38063\\Documents\\GitHub\\DoZa.3.RELOAD\\do-za.3.reload\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CC4DD1D4-704C-4B8B-8F45-2979541D8228}|DoZa.3.RELOAD.csproj|c:\\users\\38063\\documents\\github\\doza.3.reload\\do-za.3.reload\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CC4DD1D4-704C-4B8B-8F45-2979541D8228}|DoZa.3.RELOAD.csproj|solutionrelative:player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CC4DD1D4-704C-4B8B-8F45-2979541D8228}|DoZa.3.RELOAD.csproj|c:\\users\\38063\\documents\\github\\doza.3.reload\\do-za.3.reload\\playeranimation\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CC4DD1D4-704C-4B8B-8F45-2979541D8228}|DoZa.3.RELOAD.csproj|solutionrelative:playeranimation\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -20,13 +20,13 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Player.cs",
-              "DocumentMoniker": "C:\\Users\\38063\\Documents\\GitHub\\DoZa.3.RELOAD\\do-za.3.reload\\Player.cs",
-              "RelativeDocumentMoniker": "Player.cs",
-              "ToolTip": "C:\\Users\\38063\\Documents\\GitHub\\DoZa.3.RELOAD\\do-za.3.reload\\Player.cs",
-              "RelativeToolTip": "Player.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAowCgAAAAiAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\38063\\Documents\\GitHub\\DoZa.3.RELOAD\\do-za.3.reload\\PlayerAnimation\\Player.cs",
+              "RelativeDocumentMoniker": "PlayerAnimation\\Player.cs",
+              "ToolTip": "C:\\Users\\38063\\Documents\\GitHub\\DoZa.3.RELOAD\\do-za.3.reload\\PlayerAnimation\\Player.cs",
+              "RelativeToolTip": "PlayerAnimation\\Player.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAA8wD0AAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-19T22:10:18.432Z",
+              "WhenOpened": "2026-09-20T14:02:54.166Z",
               "EditorCaption": ""
             }
           ]
