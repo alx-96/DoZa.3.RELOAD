@@ -1,0 +1,139 @@
+[gd_scene format=3 uid="uid://bpwxrfk62s2tg"]
+
+[ext_resource type="Script" uid="uid://dx8a741fgmka2" path="res://MainMenu.cs" id="1_06t4h"]
+[ext_resource type="Texture2D" uid="uid://uud80csxx0xw" path="res://1.png" id="2_7vrkn"]
+[ext_resource type="Texture2D" uid="uid://00ruipp7djfr" path="res://2.png" id="3_nlkkf"]
+[ext_resource type="Texture2D" uid="uid://ch77whj38xpbb" path="res://3.png" id="4_qe12f"]
+[ext_resource type="Texture2D" uid="uid://crdfrocxe4p0t" path="res://4.png" id="5_8qtwp"]
+[ext_resource type="Script" uid="uid://du4n6faxn4fp6" path="res://CloudSpeed.cs" id="5_qe12f"]
+[ext_resource type="Texture2D" uid="uid://btv0a7ck1fm8o" path="res://6.png" id="6_dy7ct"]
+
+[node name="MainMenu" type="Control" unique_id=1649707219]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -2.0
+offset_right = 1.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_06t4h")
+
+[node name="Control3" type="Control" parent="." unique_id=1090537306]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Control" type="Control" parent="Control3" unique_id=2129787916]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Backgraund" type="TextureRect" parent="Control3/Control" unique_id=1754232892]
+layout_mode = 0
+offset_top = 2.0
+offset_right = 1151.0
+offset_bottom = 650.0
+mouse_filter = 2
+texture = ExtResource("2_7vrkn")
+
+[node name="FarCloudsLayer" type="Control" parent="Control3" unique_id=1371956069]
+anchors_preset = 0
+offset_left = -1.0
+offset_top = 2.0
+offset_right = -1.0
+offset_bottom = 2.0
+mouse_filter = 2
+script = ExtResource("5_qe12f")
+Cloud1Path = NodePath("_cloud1")
+Cloud2Path = NodePath("_cloud2")
+
+[node name="_cloud1" type="TextureRect" parent="Control3/FarCloudsLayer" unique_id=962746375]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 648.0
+texture = ExtResource("4_qe12f")
+
+[node name="_cloud2" type="TextureRect" parent="Control3/FarCloudsLayer" unique_id=1488483029]
+custom_minimum_size = Vector2(6, 0)
+layout_mode = 0
+offset_left = 576.0
+offset_right = 1728.0
+offset_bottom = 646.0
+texture = ExtResource("4_qe12f")
+
+[node name="NearCloudLayer" type="Control" parent="Control3" unique_id=389524496]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+script = ExtResource("5_qe12f")
+Cloud1Path = NodePath("_cloud1")
+Cloud2Path = NodePath("_cloud2")
+
+[node name="_cloud1" type="TextureRect" parent="Control3/NearCloudLayer" unique_id=634030402]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 648.0
+texture = ExtResource("5_8qtwp")
+flip_h = true
+
+[node name="_cloud2" type="TextureRect" parent="Control3/NearCloudLayer" unique_id=478596045]
+layout_mode = 0
+offset_left = 576.0
+offset_right = 1729.0
+offset_bottom = 648.0
+texture = ExtResource("5_8qtwp")
+flip_h = true
+
+[node name="Moon" type="TextureRect" parent="Control3" unique_id=1858217510]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 2.0
+offset_right = 1151.0
+offset_bottom = 650.0
+mouse_filter = 2
+texture = ExtResource("3_nlkkf")
+flip_h = true
+
+[node name="MainCloud" type="Control" parent="Control3" unique_id=1964457468]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+script = ExtResource("5_qe12f")
+Cloud1Path = NodePath("_cloud1")
+Cloud2Path = NodePath("_cloud2")
+
+[node name="_cloud1" type="TextureRect" parent="Control3/MainCloud" unique_id=1760691467]
+layout_mode = 0
+offset_right = 1151.0
+offset_bottom = 650.0
+texture = ExtResource("6_dy7ct")
+flip_h = true
+
+[node name="_cloud2" type="TextureRect" parent="Control3/MainCloud" unique_id=315985903]
+layout_mode = 0
+offset_left = 576.0
+offset_right = 1727.0
+offset_bottom = 650.0
+texture = ExtResource("6_dy7ct")
+flip_h = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1005287779]
+top_level = true
+layout_mode = 1
+offset_left = 312.0
+offset_top = 142.0
+offset_right = 727.0
+offset_bottom = 308.0
+
+[node name="PlayButton" type="Button" parent="VBoxContainer" unique_id=1083068966]
+layout_mode = 2
+text = "Play Test"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer" unique_id=988594891]
+layout_mode = 2
+text = "Quit Test"
