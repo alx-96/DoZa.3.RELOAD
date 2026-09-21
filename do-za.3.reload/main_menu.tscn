@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://bpwxrfk62s2tg"]
 
 [ext_resource type="Script" uid="uid://dx8a741fgmka2" path="res://MainMenu.cs" id="1_06t4h"]
-[ext_resource type="Texture2D" uid="uid://uud80csxx0xw" path="res://1.png" id="2_7vrkn"]
-[ext_resource type="Texture2D" uid="uid://00ruipp7djfr" path="res://2.png" id="3_nlkkf"]
-[ext_resource type="Texture2D" uid="uid://ch77whj38xpbb" path="res://3.png" id="4_qe12f"]
-[ext_resource type="Texture2D" uid="uid://crdfrocxe4p0t" path="res://4.png" id="5_8qtwp"]
+[ext_resource type="Texture2D" uid="uid://uud80csxx0xw" path="res://Menu/1.png" id="2_7vrkn"]
+[ext_resource type="Texture2D" uid="uid://00ruipp7djfr" path="res://Menu/2.png" id="3_nlkkf"]
+[ext_resource type="Texture2D" uid="uid://ch77whj38xpbb" path="res://Menu/3.png" id="4_qe12f"]
+[ext_resource type="Texture2D" uid="uid://crdfrocxe4p0t" path="res://Menu/4.png" id="5_8qtwp"]
 [ext_resource type="Script" uid="uid://du4n6faxn4fp6" path="res://CloudSpeed.cs" id="5_qe12f"]
-[ext_resource type="Texture2D" uid="uid://btv0a7ck1fm8o" path="res://6.png" id="6_dy7ct"]
+[ext_resource type="Texture2D" uid="uid://btv0a7ck1fm8o" path="res://Menu/6.png" id="6_dy7ct"]
 
 [node name="MainMenu" type="Control" unique_id=1649707219]
 layout_mode = 3
@@ -47,6 +47,7 @@ offset_right = -1.0
 offset_bottom = 2.0
 mouse_filter = 2
 script = ExtResource("5_qe12f")
+Speed = 25.0
 Cloud1Path = NodePath("_cloud1")
 Cloud2Path = NodePath("_cloud2")
 
@@ -70,6 +71,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 mouse_filter = 2
 script = ExtResource("5_qe12f")
+Speed = 30.0
 Cloud1Path = NodePath("_cloud1")
 Cloud2Path = NodePath("_cloud2")
 
@@ -104,6 +106,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 mouse_filter = 2
 script = ExtResource("5_qe12f")
+Speed = 15.0
 Cloud1Path = NodePath("_cloud1")
 Cloud2Path = NodePath("_cloud2")
 
@@ -125,10 +128,10 @@ flip_h = true
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1005287779]
 top_level = true
 layout_mode = 1
-offset_left = 312.0
-offset_top = 142.0
-offset_right = 727.0
-offset_bottom = 308.0
+offset_left = 63.0
+offset_top = 272.0
+offset_right = 478.0
+offset_bottom = 438.0
 
 [node name="PlayButton" type="Button" parent="VBoxContainer" unique_id=1083068966]
 layout_mode = 2

@@ -2,7 +2,7 @@ using Godot;
 
 public partial class CloudSpeed : Control
 {
-	[Export] public float Speed = 10.0f; // пикселей в секунду
+	[Export] public float Speed = 20.0f; // пикселей в секунду
 
 	[Export] public NodePath Cloud1Path;
 	[Export] public NodePath Cloud2Path;
