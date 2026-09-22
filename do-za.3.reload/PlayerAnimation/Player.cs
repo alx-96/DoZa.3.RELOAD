@@ -17,7 +17,7 @@ public partial class Player : CharacterBody2D
 	public override void _PhysicsProcess(double delta)
 	{
 		Vector2 velocity = Velocity;
-		Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
+		Vector2 direction = Input.GetVector("kLeft", "kRight", "kUp", "kDown");
 
 
 		if (Input.IsKeyPressed(Key.Shift))
@@ -71,6 +71,14 @@ public partial class Player : CharacterBody2D
 			{
 				animatedSprite.Play("PlayerStay");
 			}
+
+			
+			if(Input.IsActionJustPressed("Attack"))
+			{
+				Attack();
+			}
+
+
 		}
 		
 
@@ -88,6 +96,19 @@ public partial class Player : CharacterBody2D
 		else if(directionCS.X < 0)
 		{
 			animatedSprite.FlipH = true;
+		}
+	}
+
+	/*private void Respawn()
+	{
+		animatedSprite.Play("");
+	}*/
+
+	private void Attack()
+	{
+		if(Input.IsActionJustPressed("Attack"))
+		{
+			animatedSprite.Play("PlayerAttack");
 		}
 	}
 }

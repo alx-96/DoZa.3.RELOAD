@@ -489,7 +489,7 @@ shape = SubResource("RectangleShape2D_kav7g")
 position = Vector2(525, 483)
 sprite_frames = SubResource("SpriteFrames_kav7g")
 animation = &"PlayerAttack"
-frame_progress = 0.88648355
+frame_progress = 0.7377716
 
 [node name="Ground" type="StaticBody2D" parent="." unique_id=160117464]
 
