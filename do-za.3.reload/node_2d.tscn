@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dbc8x0nvjj4w2"]
 
-[ext_resource type="Script" uid="uid://13dsvibamgk8" path="res://Animations/PlayerAnimation/Player.cs" id="1_wtcfe"]
+[ext_resource type="Script" uid="uid://13dsvibamgk8" path="res://PlayerScripts/Player.cs" id="1_wtcfe"]
 [ext_resource type="Texture2D" uid="uid://covvbvacr7kh6" path="res://Animations/PlayerAnimation/PlayerThrow/row13_col00.png" id="2_7ct8v"]
 [ext_resource type="Texture2D" uid="uid://u6w4v6lj6jf4" path="res://Animations/PlayerAnimation/PlayerJump/row04_col00.png" id="2_7vxoj"]
 [ext_resource type="Texture2D" uid="uid://chcsonqf660ci" path="res://Animations/PlayerAnimation/PlayerDeath/row06_col00.png" id="2_cnnru"]
@@ -488,8 +488,8 @@ shape = SubResource("RectangleShape2D_kav7g")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player" unique_id=1478774501]
 position = Vector2(525, 483)
 sprite_frames = SubResource("SpriteFrames_kav7g")
-animation = &"PlayerAttack"
-frame_progress = 0.9119341
+animation = &"PlayerStay"
+frame_progress = 0.13086411
 
 [node name="Ground" type="StaticBody2D" parent="." unique_id=160117464]
 
