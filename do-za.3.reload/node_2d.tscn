@@ -1,12 +1,10 @@
 [gd_scene format=3 uid="uid://dbc8x0nvjj4w2"]
 
-[ext_resource type="Script" uid="uid://13dsvibamgk8" path="res://Animations/PlayerAnimation/Player.cs" id="1_wtcfe"]
-[ext_resource type="Texture2D" uid="uid://bnch21mn3y7c3" path="res://BgGame/BgSky/BGBack.png" id="2_0dcxc"]
+[ext_resource type="Script" uid="uid://13dsvibamgk8" path="res://PlayerScripts/Player.cs" id="1_wtcfe"]
 [ext_resource type="Texture2D" uid="uid://covvbvacr7kh6" path="res://Animations/PlayerAnimation/PlayerThrow/row13_col00.png" id="2_7ct8v"]
 [ext_resource type="Texture2D" uid="uid://u6w4v6lj6jf4" path="res://Animations/PlayerAnimation/PlayerJump/row04_col00.png" id="2_7vxoj"]
 [ext_resource type="Texture2D" uid="uid://chcsonqf660ci" path="res://Animations/PlayerAnimation/PlayerDeath/row06_col00.png" id="2_cnnru"]
 [ext_resource type="Texture2D" uid="uid://bb2ljd6vfuohi" path="res://Animations/PlayerAnimation/PlayerWalk/row02_col00.png" id="2_nr8wp"]
-[ext_resource type="Texture2D" uid="uid://cjv5htmobuicx" path="res://BgGame/BgSky/CloudsFront.png" id="2_r8aua"]
 [ext_resource type="Texture2D" uid="uid://bvnonppfj2j5h" path="res://Animations/PlayerAnimation/PlayerDeath/row06_col01.png" id="3_540hr"]
 [ext_resource type="Texture2D" uid="uid://c6pcer0578c8k" path="res://Animations/PlayerAnimation/PlayerWalk/row02_col01.png" id="3_d2bti"]
 [ext_resource type="Texture2D" uid="uid://d3qxsk2lbap74" path="res://Animations/PlayerAnimation/PlayerJump/row04_col01.png" id="3_ei405"]
@@ -14,7 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://duss4cvmyqysp" path="res://Animations/PlayerAnimation/PlayerThrow/row13_col02.png" id="4_0fsb4"]
 [ext_resource type="Texture2D" uid="uid://cpmxya2r74psu" path="res://Animations/PlayerAnimation/PlayerDeath/row06_col02.png" id="4_6ip5v"]
 [ext_resource type="Texture2D" uid="uid://bddqbpecvu6u5" path="res://Animations/PlayerAnimation/PlayerFalling/row04_col02.png" id="4_e8dv2"]
-[ext_resource type="Texture2D" uid="uid://dmitqucg0pg4m" path="res://BgGame/BgSky/BGFront.png" id="4_sduiw"]
 [ext_resource type="Texture2D" uid="uid://bgay7pflwgc33" path="res://Animations/PlayerAnimation/PlayerWalk/row02_col02.png" id="4_ta5nu"]
 [ext_resource type="Texture2D" uid="uid://2ssdddnxgj1t" path="res://Animations/PlayerAnimation/PlayerWalk/row02_col03.png" id="5_flf07"]
 [ext_resource type="Texture2D" uid="uid://bgdxgk02g2vh0" path="res://Animations/PlayerAnimation/PlayerDeath/row06_col03.png" id="5_q5dlx"]
@@ -101,10 +98,9 @@
 [ext_resource type="Texture2D" uid="uid://djbfw3iylv1p3" path="res://Animations/BulletAnimation/_5/row04_col13.png" id="96_2l1wp"]
 [ext_resource type="Texture2D" uid="uid://blxt6jd8oecbd" path="res://Animations/BulletAnimation/_5/row04_col14.png" id="97_bxemi"]
 [ext_resource type="Texture2D" uid="uid://dryniqa21aqyk" path="res://Animations/BulletAnimation/_5/row04_col15.png" id="98_qoxh5"]
-[ext_resource type="Texture2D" uid="uid://0f5l3iee7lo4" path="res://BgGame/BgSky/CloudsBack.png" id="99_inwkr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kav7g"]
-size = Vector2(11.0625, 21)
+size = Vector2(11, 25)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kav7g"]
 animations = [{
@@ -476,91 +472,34 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i0upc"]
-size = Vector2(7630, 40)
+size = Vector2(1089, 40)
 
 [node name="Node2D" type="Node2D" unique_id=1642824135]
 position = Vector2(-3, 0)
 
-[node name="Valley" type="Node2D" parent="." unique_id=720820719]
-
-[node name="Sky" type="Parallax2D" parent="Valley" unique_id=1915598770]
-scroll_scale = Vector2(0.1, 1)
-repeat_size = Vector2(1152, 0)
-
-[node name="Sky" type="Sprite2D" parent="Valley/Sky" unique_id=1166095703]
-position = Vector2(579, 324)
-scale = Vector2(2.25, 2.025)
-texture = ExtResource("99_inwkr")
-
-[node name="Clouds" type="Parallax2D" parent="Valley" unique_id=1342022129]
-scroll_scale = Vector2(0.3, 1)
-repeat_size = Vector2(1152, 0)
-
-[node name="Clouds" type="Sprite2D" parent="Valley/Clouds" unique_id=166884091]
-position = Vector2(579, 324)
-scale = Vector2(2.25, 2.025)
-texture = ExtResource("2_r8aua")
-
-[node name="b_mountains" type="Parallax2D" parent="Valley" unique_id=2030255028]
-scroll_scale = Vector2(0.7, 1)
-repeat_size = Vector2(1152, 0)
-
-[node name="b_mountains" type="Sprite2D" parent="Valley/b_mountains" unique_id=1061919191]
-position = Vector2(579, 324)
-scale = Vector2(2.25, 2.025)
-texture = ExtResource("2_0dcxc")
-
-[node name="f_mountains" type="Parallax2D" parent="Valley" unique_id=989248961]
-scroll_scale = Vector2(0.7, 1)
-repeat_size = Vector2(1152, 0)
-
-[node name="f_mountains" type="Sprite2D" parent="Valley/f_mountains" unique_id=939276644]
-position = Vector2(579, 324)
-scale = Vector2(2.25, 2.025)
-texture = ExtResource("4_sduiw")
-
-[node name="BgTrees" type="Parallax2D" parent="Valley" unique_id=180662385]
-
-[node name="Sprite2D" type="Sprite2D" parent="Valley/BgTrees" unique_id=1171308463]
-
 [node name="Player" type="CharacterBody2D" parent="." unique_id=864696326 node_paths=PackedStringArray("animatedSprite")]
-position = Vector2(36, 23)
 script = ExtResource("1_wtcfe")
 animatedSprite = NodePath("AnimatedSprite2D")
 
-[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1188187875]
-position = Vector2(517, 338)
-limit_left = 0
-limit_top = 0
-limit_right = 5000
-limit_bottom = 1000
-position_smoothing_speed = 2.0
-rotation_smoothing_enabled = true
-rotation_smoothing_speed = 10.0
-drag_vertical_enabled = true
-drag_vertical_offset = -0.58
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1557484554]
-position = Vector2(486, 573)
+position = Vector2(524.5, 486.5)
 shape = SubResource("RectangleShape2D_kav7g")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player" unique_id=1478774501]
-position = Vector2(487, 568)
-scale = Vector2(1.046875, 1)
+position = Vector2(525, 483)
 sprite_frames = SubResource("SpriteFrames_kav7g")
-animation = &"PlayerAttack"
-frame_progress = 0.21132478
+animation = &"PlayerStay"
+frame_progress = 0.13086411
 
 [node name="Ground" type="StaticBody2D" parent="." unique_id=160117464]
-position = Vector2(-647, 6)
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Ground" unique_id=1145217814]
-position = Vector2(4483, 626)
-shape = SubResource("RectangleShape2D_i0upc")
-
-[node name="ColorRect" type="ColorRect" parent="Ground/CollisionShape2D3" unique_id=362285722]
+[node name="ColorRect" type="ColorRect" parent="Ground" unique_id=362285722]
 modulate = Color(0, 0.3764706, 0, 1)
-offset_left = -196.0
-offset_top = -20.0
-offset_right = 543.0
-offset_bottom = 20.0
+offset_left = 320.0
+offset_top = 542.0
+offset_right = 713.0
+offset_bottom = 582.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground" unique_id=1751082410]
+position = Vector2(586.5, 562)
+shape = SubResource("RectangleShape2D_i0upc")
