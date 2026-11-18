@@ -47,7 +47,7 @@ offset_right = -1.0
 offset_bottom = 2.0
 mouse_filter = 2
 script = ExtResource("5_qe12f")
-Speed = 60.0
+Speed = 25.0
 Cloud1Path = NodePath("_cloud1")
 Cloud2Path = NodePath("_cloud2")
 
@@ -71,7 +71,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 mouse_filter = 2
 script = ExtResource("5_qe12f")
-Speed = 50.0
+Speed = 30.0
 Cloud1Path = NodePath("_cloud1")
 Cloud2Path = NodePath("_cloud2")
 
@@ -106,7 +106,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 mouse_filter = 2
 script = ExtResource("5_qe12f")
-Speed = 45.0
+Speed = 15.0
 Cloud1Path = NodePath("_cloud1")
 Cloud2Path = NodePath("_cloud2")
 
